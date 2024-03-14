@@ -1,0 +1,5 @@
+server:
+  port: 20001
+zhiller:
+  whitelist:
+    users: tom,jack,lily
