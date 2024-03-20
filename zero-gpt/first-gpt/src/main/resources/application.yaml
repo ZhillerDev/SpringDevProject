@@ -1,2 +1,14 @@
 server:
   port: 20001
+
+# weixin
+wx:
+  config:
+    originalid: gh_856b57f65c84
+    appid: wxdffbbe14267e52ef
+    token: zhiller
+
+# chatglm
+glm:
+  apihost: https://open.bigmodel.cn/
+  apikey: fc3d4fd66325541f63f68295a583ad09.XFnsRZIHBrAwV08A

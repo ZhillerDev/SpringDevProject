@@ -27,6 +27,7 @@ public class JwtFilter extends AccessControlFilter {
     try {
       // 鉴权认证
       getSubject(servletRequest, servletResponse).login(jwtToken);
+      logger.info("鉴权成功");
       return true;
     } catch (Exception e) {
       logger.error("鉴权认证失败", e);

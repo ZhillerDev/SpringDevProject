@@ -5,6 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,11 +17,11 @@ import java.util.Map;
 public class ApiAccessController {
   private Logger logger = LoggerFactory.getLogger(ApiAccessController.class);
 
-  @RequestMapping("/authorize")
+  @PostMapping("/authorize")
   public ResponseEntity<Map<String, String>> authorize(String username, String password) {
     Map<String, String> map = new HashMap<>();
     // 模拟账号和密码校验
-    if (!"xfg".equals(username) || !"123".equals(password)) {
+    if (!"admin".equals(username) || !"123".equals(password)) {
       map.put("msg", "用户名密码错误");
       return ResponseEntity.ok(map);
     }
@@ -37,7 +39,7 @@ public class ApiAccessController {
   /**
    * http://localhost:8080/verify?token=
    */
-  @RequestMapping("/verify")
+  @GetMapping("/verify")
   public ResponseEntity<String> verify(String token) {
     logger.info("验证 token：{}", token);
     return ResponseEntity.status(HttpStatus.OK).body("verify success!");
