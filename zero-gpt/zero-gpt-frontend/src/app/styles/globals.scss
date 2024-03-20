@@ -60,7 +60,7 @@
 
   --window-width: 90vw;
   --window-height: 90vh;
-  --sidebar-width: 300px;
+  --sidebar-width: 60px;
   --window-content-width: calc(100% - var(--sidebar-width));
   --message-max-width: 80%;
   --full-height: 100%;
@@ -89,7 +89,7 @@ html {
   height: var(--full-height);
 
   font-family: "Noto Sans SC", "SF Pro SC", "SF Pro Text", "SF Pro Icons",
-    "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 body {
