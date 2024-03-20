@@ -2,7 +2,7 @@
 
 import styles from "./home.module.scss";
 
-import {SideBar} from "@/app/components/sidebar";
+import {SideBar} from "@/app/components/sidebar/sidebar";
 import dynamic from "next/dynamic";
 
 import {
