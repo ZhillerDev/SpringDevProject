@@ -14,8 +14,8 @@ import {Path} from "@/app/constants";
 import {useAppConfig} from "@/app/store/config";
 
 
-const Chat = dynamic(async () => (await import("./chat/chat")).Chat);
-const Role = dynamic(async () => (await import("./role/role")).Role);
+const Chat = dynamic(async () => (await import("@/app/pages/chat/chat")).Chat);
+const Role = dynamic(async () => (await import("@/app/pages/role/role")).Role);
 
 function Screen() {
   const config = useAppConfig();
