@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,10 +33,6 @@ public class WeiXinPortalController {
 
   @Value("${wx.config.originalid}")
   private String originalId;
-  @Value("${glm.apikey}")
-  private String glmApiKey;
-  @Value("${glm.apihost}")
-  private String glmApiHost;
 
   @Resource
   private IWeiXinValidateService weiXinValidateService;
@@ -52,8 +49,8 @@ public class WeiXinPortalController {
   public WeiXinPortalController() {
     // 1. 配置文件；智谱Ai申请你的 ApiSecretKey 教程；https://bugstack.cn/md/project/chatgpt/sdk/chatglm-sdk-java.html
     Configuration configuration = new Configuration();
-    configuration.setApiHost(glmApiHost);
-    configuration.setApiSecretKey(glmApiKey);
+    configuration.setApiHost("https://open.bigmodel.cn/");
+    configuration.setApiSecretKey("fc3d4fd66325541f63f68295a583ad09.XFnsRZIHBrAwV08A");
     // 2. 会话工厂
     OpenAiSessionFactory factory = new DefaultOpenAiSessionFactory(configuration);
     // 3. 开启会话
@@ -94,9 +91,10 @@ public class WeiXinPortalController {
     }
   }
 
-  
+
   /**
    * 处理微信服务器转发
+   *
    * @param appid
    * @param requestBody
    * @param signature
